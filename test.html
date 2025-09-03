@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Serper Search Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Google Serper Search Tool</h2>
+    <div class="full-width">
+      <input type="text" id="apiKey" placeholder="Enter API Key">
+      <a id="apiLink" href="https://serper.dev/" target="_blank">Click here to register and get API</a>
+    </div>
+    <div class="split-container">
+      <div class="half-width">
+        <textarea id="query" placeholder="Enter URLs (one per line or separated by spaces)" rows="5"></textarea>
+      </div>
+      <div class="half-width">
+        <select id="country">
+          <option value="">Select Country</option>
+          <!-- Đông Nam Á -->
+          <option value="vn">Vietnam</option>
+          <option value="th">Thailand</option>
+          <option value="id">Indonesia</option>
+          <option value="my">Malaysia</option>
+          <option value="sg">Singapore</option>
+          <option value="ph">Philippines</option>
+          <!-- Châu Á -->
+          <option value="jp">Japan</option>
+          <option value="kr">South Korea</option>
+          <option value="cn">China</option>
+          <option value="in">India</option>
+          <!-- Mỹ -->
+          <option value="us">United States</option>
+          <!-- Thêm Úc, Canada, Anh -->
+          <option value="au">Australia</option>
+          <option value="ca">Canada</option>
+          <option value="gb">United Kingdom</option>
+        </select>
+        <select id="language">
+          <option value="en">English (US, UK, AU, CA)</option>
+          <option value="vi">Vietnamese (VN)</option>
+          <option value="th">Thai (TH)</option>
+          <option value="id">Indonesian (ID)</option>
+          <option value="ms">Malay (MY)</option>
+          <option value="zh">Chinese (CN)</option>
+          <option value="ja">Japanese (JP)</option>
+          <option value="ko">Korean (KR)</option>
+          <option value="hi">Hindi (IN)</option>
+          <option value="fr">French (CA)</option>
+        </select>
+        <select id="dateRange">
+          <option value="">Any time</option>
+          <option value="qdr:h">Past hour</option>
+          <option value="qdr:d">Past 24 hours</option>
+          <option value="qdr:w">Past week</option>
+          <option value="qdr:m">Past month</option>
+          <option value="qdr:y">Past year</option>
+        </select>
+        <label><input type="checkbox" id="autocorrect" checked> Autocorrect</label>
+        <select id="resultsNum">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+        <span id="credit" class="hidden">Credit: 2 (normal is 1)</span>
+        <div class="page-controls">
+          <button id="pageDown" aria-label="Decrease page">-</button>
+          <input type="text" id="page" inputmode="decimal" pattern="[0-9]*" value="1" aria-valuemin="1" aria-valuemax="9007199254740991" aria-valuenow="1" class="page-input">
+          <button id="pageUp" aria-label="Increase page">+</button>
+        </div>
+      </div>
+    </div>
+    <button id="search">Search</button>
+    <div id="results"></div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
